@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="PM02Ejercicio_2_2.MainPage"
+             Title="PM02Ejercicio2_2">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="LightSkyBlue" 
+                   Padding="5,0,0,5" 
+                   CornerRadius="0" 
+                   HeightRequest="40"
+                   >
+
+                <Label Text="Firma Aqui 👇" 
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center" 
+                       TextColor="White" 
+                       FontSize="24"
+                       />
+            </Frame>
+
+ 
+            <forms:SignaturePadView x:Name="firmapadview" 
+                                    StrokeColor="DarkGreen" 
+                                    BackgroundColor="White" 
+                                    StrokeWidth="2" 
+                                    HeightRequest="360" />
+
+
+            <Entry x:Name="nombre_input" 
+                   Placeholder="Nombre:" 
+                   FontSize="18"
+                   Margin="15,25,25,0" />
+
+            <Entry x:Name="descripcion_input" 
+                   Placeholder="Descripcion:" 
+                   FontSize="18"
+                   Margin="15,15,25,0" />
+
+            <Grid ColumnDefinitions="*,*" 
+                  Margin="0,20,0,100">
+
+                <Button Grid.Column="0" 
+                        x:Name="btnagregar" 
+                        Text="Guardar" 
+                        FontSize="18" 
+                        FontAttributes="Bold"
+                        CornerRadius="20" 
+                        Margin="20,0,5,0" 
+                        
+                        TextTransform="None"
+                         TextColor="White"
+                        BackgroundColor="DarkGreen"
+                        Clicked="btnagregar_Clicked" />
+
+                <Button Grid.Column="1" 
+                        x:Name="btnlistview_firmas" 
+                        Text="ListaView" 
+                        FontSize="18" 
+                        FontAttributes="Bold"
+                        CornerRadius="20" 
+                        Margin="5,0,20,0"  
+                        TextTransform="None"
+                        TextColor="White"
+                        BackgroundColor="DarkGreen"
+                        Clicked="btnlistview_firmas_Clicked" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

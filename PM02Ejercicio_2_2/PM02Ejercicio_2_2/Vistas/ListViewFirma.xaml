@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:PM02Eje2_2.Converters"
+             x:Class="PM02Ejercicio_2_2.Vistas.ListViewFirma">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ImageConverter x:Key="ByteArrayToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listview_firmas" 
+                      RowHeight="70">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ImageCell ImageSource="{Binding Imagen, Converter={StaticResource ByteArrayToImage}}" 
+                                   Text="{Binding Nombre}" 
+                                   Detail="{Binding Descripcion}"
+                                   TextColor="Black" 
+                                   DetailColor="Black"
+                                   />
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
